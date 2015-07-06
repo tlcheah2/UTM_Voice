@@ -1,0 +1,645 @@
+	html, body
+	{
+		height: 100%;
+	}
+	
+	body
+	{
+		margin: 0px;
+		padding: 0px;
+		background: #00838C;
+		font-family: 'Source Sans Pro', sans-serif;
+		font-size: 12pt;
+		font-weight: 400;
+		color: #000000;
+	}
+	
+	
+	h1, h2, h3
+	{
+		margin: 0;
+		padding: 0;
+	}
+	
+	p, ol, ul
+	{
+		margin-top: 0;
+	}
+	
+	ol, ul
+	{
+		padding: 0;
+		list-style: none;
+	}
+	
+	p
+	{
+		line-height: 180%;
+	}
+	
+	strong
+	{
+	}
+	
+	a
+	{
+		color: #0000FF;
+	}
+	
+	a:hover
+	{
+		text-decoration: none;
+	}
+	
+
+	.container
+	{
+		margin: 0px auto;
+		width: 1200px;
+	}
+	
+	#video
+      {
+        display: block;
+        width: 500px;
+		margin-left: auto;
+		margin-right: auto;
+	}
+	
+	.buttons-wrapper
+      {
+        text-align: center;
+    }
+	
+	.button-demo
+      {
+        padding: 0.5em;
+        display: inline-block;
+        margin: 1em auto;
+    }
+	
+	.hidden
+      {
+        display: none;
+    }
+	
+	
+
+/*********************************************************************************/
+/* Form Style                                                                    */
+#mask {
+    display: none;
+    background: #000;
+    position: fixed;
+    left: 0;
+    top: 0;
+    z-index: 10;
+    width: 100%;
+    height: 100%;
+    opacity: 0.8;
+    z-index: 999;
+}
+
+/* You can customize to your needs  */
+.login-popup {
+    display: none;
+    background: #333;
+    padding: 10px;
+    border: 2px solid #ddd;
+    float: left;
+    font-size: 1.2em;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    z-index: 99999;
+    box-shadow: 0px 0px 20px #999;
+    /* CSS3 */
+        -moz-box-shadow: 0px 0px 20px #999;
+    /* Firefox */
+        -webkit-box-shadow: 0px 0px 20px #999;
+    /* Safari, Chrome */
+	border-radius: 3px 3px 3px 3px;
+    -moz-border-radius: 3px;
+    /* Firefox */
+        -webkit-border-radius: 3px;
+    /* Safari, Chrome */;
+}
+
+.register-popup {
+    display: none;
+    background: #333;
+    padding: 10px;
+    border: 2px solid #ddd;
+    float: left;
+    font-size: 1.2em;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    z-index: 99999;
+    box-shadow: 0px 0px 20px #999;
+    /* CSS3 */
+        -moz-box-shadow: 0px 0px 20px #999;
+    /* Firefox */
+        -webkit-box-shadow: 0px 0px 20px #999;
+    /* Safari, Chrome */
+	border-radius: 3px 3px 3px 3px;
+    -moz-border-radius: 3px;
+    /* Firefox */
+        -webkit-border-radius: 3px;
+    /* Safari, Chrome */;
+}
+
+img.btn_close {
+    Position the close button
+	float: right;
+    margin: -28px -28px 0 0;
+}
+
+fieldset {
+    border: none;
+}
+
+form.signin .textbox label {
+    display: block;
+    padding-bottom: 7px;
+}
+
+form.signin .textbox span {
+    display: block;
+}
+
+form.signin p, form.signin span {
+    color: #999;
+    font-size: 11px;
+    line-height: 18px;
+}
+
+form.signin .textbox input {
+    background: #666666;
+    border-bottom: 1px solid #333;
+    border-left: 1px solid #000;
+    border-right: 1px solid #333;
+    border-top: 1px solid #000;
+    color: #fff;
+    border-radius: 3px 3px 3px 3px;
+    -moz-border-radius: 3px;
+    -webkit-border-radius: 3px;
+    font: 13px Arial, Helvetica, sans-serif;
+    padding: 6px 6px 4px;
+    width: 200px;
+}
+
+form.signin input:-moz-placeholder {
+    color: #bbb;
+    text-shadow: 0 0 2px #000;
+}
+
+form.signin input::-webkit-input-placeholder {
+    color: #bbb;
+    text-shadow: 0 0 2px #000;
+}
+
+.button {
+    background: -moz-linear-gradient(center top, #f3f3f3, #dddddd);
+    background: -webkit-gradient(linear, left top, left bottom, from(#f3f3f3), to(#dddddd));
+    background: -o-linear-gradient(top, #f3f3f3, #dddddd);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorStr='#f3f3f3', EndColorStr='#dddddd');
+    border-color: #000;
+    border-width: 1px;
+    border-radius: 4px 4px 4px 4px;
+    -moz-border-radius: 4px;
+    -webkit-border-radius: 4px;
+    color: #333;
+    cursor: pointer;
+    display: inline-block;
+    padding: 6px 6px 4px;
+    margin-top: 10px;
+    font: 12px;
+    width: 214px;
+}
+
+.button:hover {
+    background: #ddd;
+}
+/*********************************************************************************/
+
+		
+
+/*********************************************************************************/
+/* List Styles                                                                   */
+/*********************************************************************************/
+
+	ul.style1
+	{
+	}
+
+
+/*********************************************************************************/
+/* Social Icon Styles                                                            */
+/*********************************************************************************/
+
+	ul.contact
+	{
+		margin: 0;
+		padding: 2em 0em 0em 0em;
+		list-style: none;
+	}
+	
+	ul.contact li
+	{
+		display: inline-block;
+		padding: 0em 0.30em;
+		font-size: 1.2em;
+	}
+	
+	ul.contact li span
+	{
+		display: none;
+		margin: 0;
+		padding: 0;
+	}
+	
+	ul.contact li a
+	{
+		color: #FFF;
+	}
+	
+	ul.contact li a:before
+	{
+		display: inline-block;
+		background: #333333;
+		width: 60px;
+		height: 60px;
+		line-height: 60px;
+		text-align: center;
+		color: #FFFFFF;
+	}
+	
+
+/*********************************************************************************/
+/* Button Style                                                                  */
+/*********************************************************************************/
+
+	.button
+	{
+		display: inline-block;
+		margin-top: 2em;
+		padding: 1em 2em 1em 2em;
+		background: #B03500;
+		letter-spacing: 0.20em;
+		line-height: 1.8em;
+		text-decoration: none;
+		text-transform: uppercase;
+		font-weight: 400;
+		font-size: 1.2em;
+		color: #FFF;
+	}
+	
+	.button:before
+	{
+		display: inline-block;
+		background: #8DCB89;
+		margin-right: 1em;
+		width: 40px;
+		height: 40px;
+		line-height: 40px;
+		border-radius: 20px;
+		text-align: center;
+		color: #272925;
+	}
+	
+	.button-small
+	{
+		padding: 0.9em 2em;
+		line-height: 1.8em;
+		font-size: 1em;
+	}
+		
+/*********************************************************************************/
+/* Heading Titles                                                                */
+/*********************************************************************************/
+
+	.title
+	{
+		margin-bottom: 3em;
+	}
+	
+	.title h2
+	{
+		font-size: 2.8em;
+		color: rgba(255,255,255,0.9);
+	}
+	
+	.title .byline
+	{
+		letter-spacing: 0.15em;
+		text-transform: uppercase;
+		font-weight: 400;
+		font-size: 1.1em;
+		color: #6F6F6F;
+	}
+
+/*********************************************************************************/
+/* Header                                                                        */
+/*********************************************************************************/
+
+	#header-wrapper
+	{
+		overflow: hidden;
+		padding: 5em 0em;
+		background: #B03500 url(images/overlay.png) repeat;
+	}
+
+	#header
+	{
+	}
+
+/*********************************************************************************/
+/* Logo                                                                          */
+/*********************************************************************************/
+
+	#logo
+	{
+		padding: 5em 0em;
+		text-align: center;
+	}
+	
+	#logo h1
+	{
+		font-size: 3.5em;
+	}
+	
+	#logo a
+	{
+		text-decoration: none;
+		color: #FFF;
+	}
+	
+	#logo span
+	{
+		letter-spacing: 0.10em;
+		text-transform: uppercase;
+		font-size: 0.90em;
+		color: rgba(255,255,255,0.5);
+	}
+
+	#logo span a
+	{
+		color: rgba(255,255,255,0.8);
+	}
+	
+	#logo .icon
+	{
+		font-size: 4em;
+		color: rgba(255,255,255,1);
+	}
+	
+	
+
+/*********************************************************************************/
+/* Menu                                                                          */
+/*********************************************************************************/
+
+	#menu
+	{
+		width: 80%;
+		margin: 0px auto;
+	}
+	
+	#menu ul
+	{
+		text-align: center;
+	}
+	
+	#menu li
+	{
+		display: inline-block;
+	}
+	
+	#menu li a, #menu li span
+	{
+		display: inline-block;
+		margin-left: 0.50em;
+		padding: 1.5em 1.5em;
+		letter-spacing: 0.20em;
+		text-decoration: none;
+		font-size: 0.90em;
+		font-weight: 600;
+		text-transform: uppercase;
+		outline: 0;
+		color: #FFF;
+	}
+	
+	#menu li:hover a, #menu li.active a, #menu li.active span
+	{
+	}
+	
+	#menu .current_page_item a
+	{
+		color: #FFF;
+	}
+	
+
+/*********************************************************************************/
+/* Banner                                                                        */
+/*********************************************************************************/
+
+	#banner
+	{
+	}
+
+/*********************************************************************************/
+/* Wrapper                                                                       */
+/*********************************************************************************/
+
+	#wrapper1
+	{
+		background: #242424;
+	}
+
+	#wrapper2
+	{
+		background: #EDEDED;
+	}
+
+	#wrapper3
+	{
+		overflow: hidden;
+		padding: 8em 0em;
+		background: #FFF;
+	}
+	
+	#wrapper4
+	{
+		overflow: hidden;
+		padding: 8em 0em;
+		background: #939E77;
+	}
+
+/*********************************************************************************/
+/* Welcome                                                                       */
+/*********************************************************************************/
+
+	#welcome
+	{
+		overflow: hidden;
+		padding: 8em 0em;
+		text-align: center;
+		color: rgba(255,255,255,0.3);
+	}
+	
+	#welcome .content
+	{
+		padding: 0em 8em;
+	}
+	
+	
+	
+	#welcome a,
+	#welcome strong
+	{
+		color: rgba(255,255,255,0.6);
+	}
+
+/*********************************************************************************/
+/* Page                                                                          */
+/*********************************************************************************/
+
+	#page
+	{
+	}
+
+/*********************************************************************************/
+/* Content                                                                       */
+/*********************************************************************************/
+
+	#content
+	{
+	}
+
+/*********************************************************************************/
+/* Sidebar                                                                       */
+/*********************************************************************************/
+
+	#sidebar
+	{
+	}
+
+/*********************************************************************************/
+/* Footer                                                                        */
+/*********************************************************************************/
+
+	#footer
+	{
+		text-align: center;
+	}
+
+	
+	#footer .title span
+	{
+		color: rgba(255,255,255,0.4);
+	}
+
+/*********************************************************************************/
+/* Copyright                                                                     */
+/*********************************************************************************/
+
+	#copyright
+	{
+		overflow: hidden;
+		padding: 5em 0em;
+		border-top: 1px solid rgba(255,255,255,0.08);
+	}
+	
+	#copyright p
+	{
+		letter-spacing: 0.20em;
+		text-align: center;
+		text-transform: uppercase;
+		font-size: 0.80em;
+		color: rgba(255,255,255,0.3);
+	}
+	
+	#copyright a
+	{
+		text-decoration: none;
+		color: rgba(255,255,255,0.6);
+	}
+
+/*********************************************************************************/
+/* Newsletter                                                                    */
+/*********************************************************************************/
+
+	#newsletter
+	{
+		overflow: hidden;
+		padding: 8em 0em;
+		background: #EDEDED;
+		text-align: center;
+	}
+	
+	#newsletter .title h2
+	{
+		color: rgba(0,0,0,0.8);
+	}
+	
+	#newsletter .content
+	{
+		width: 600px;
+		margin: 0px auto;
+	}
+	
+/*********************************************************************************/
+/* Portfolio                                                                     */
+/*********************************************************************************/
+
+	#portfolio
+	{
+	}
+	
+	#portfolio .box
+	{
+		text-align: center;
+		color: rgba(0,0,0,0.5);
+	}
+	
+	#portfolio h3
+	{
+		display: block;
+		padding-bottom: 1em;
+		text-transform: uppercase;
+		font-size: 1em;
+		color: rgba(0,0,0,0.6);
+	}
+
+	#portfolio .title
+	{
+		text-align: center;
+	}
+
+	#portfolio .title h2
+	{
+		color: rgba(0,0,0,0.8);
+	}
+
+	.column1,
+	.column2,
+	.column3,
+	.column4
+	{
+		width: 282px;
+	}
+	
+	.column1,
+	.column2,
+	.column3
+	{
+		float: left;
+		margin-right: 24px;
+	}
+	
+	.column4
+	{
+		float: right;
+	}
+	

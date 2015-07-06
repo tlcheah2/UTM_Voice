@@ -1,0 +1,118 @@
+﻿<html>
+<title>Group Text Chat</title>
+<h1 style="border-bottom: 1px solid #CCCCCC; display: block; font-size: 2em; margin-bottom: 0em; padding: .6em 0; text-align: center;">Group Text Chat</h1>
+
+<style>
+	html { background: #eee; }
+	
+	body {
+        font-size: 1.2em;
+        line-height: 1.2em;
+        margin: 0;
+    }
+
+    input[type=text] {
+        -webkit-user-select: initial;
+        background: none repeat scroll 0 0 #F9F9F9;
+        border: 1px solid #CCCCCC;
+        border-radius: 0 0 5px 5px;
+        border-top: 0;
+        font: 300 18px/40px 'light', inherit;
+        height: 40px;
+        letter-spacing: 1px;
+        margin-bottom: 4px;
+        padding: 5px 10px;
+        width: 100%;
+    }
+
+    #output {
+        background: none repeat scroll 0 0 #F9F9F9;
+        border: 1px solid #CCCCCC;
+        border-radius: 5px 5px 0 0;
+        font: 300 18px/40px 'light', 'Helvetica Neue', Arial, Helvetica, sans-serif;
+        height: 400px;
+        letter-spacing: 1px;
+        margin-bottom: 0;
+        overflow: scroll;
+        padding: 5px 10px;
+    }
+
+    #output div { border-bottom: 1px solid #CCCCCC; }
+
+    section.name {
+        float: left;
+        overflow: hidden;
+        padding-left: 2em;
+        padding-right: 1em;
+        text-align: right;
+        width: 7em;
+    }
+
+    section.message {
+        border-left: 1px solid #CCCCCC;
+        margin-left: 10em;
+        overflow: hidden;
+        padding-left: 1em;
+    }
+	
+</style>
+<body>
+<input type="text" disabled>
+<div id="output"></div>
+</body>
+<script>
+      
+	  var websocket = new WebSocket('ws://10.212.68.46:1111');
+	  websocket.onopen = function() {
+      if (!window.username) window.username = prompt('Please enter your full name') || 'Anonymous';
+
+        setTimeout(function() {
+            websocket.send({
+                sender: window.username,
+                message: 'is ready to share text messages with you.'
+            });
+        }, 1000);
+
+        input.disabled = false;
+    };
+    websocket.push = websocket.send;
+    websocket.send = function(data) {
+        websocket.push(JSON.stringify(data));
+    };
+
+    websocket.onmessage = function(e) {
+        appendTBox(JSON.parse(e.data));
+    };
+</script>
+<script>
+    input = document.querySelector('input[type=text]');
+    input.onkeypress = function(e) {
+        if (e.keyCode !== 13 || !this.value.length) return;
+        websocket.send({
+            sender: window.username,
+            message: this.value
+        });
+
+        /* self preview! */
+        appendTBox({
+            sender: window.username,
+            message: this.value
+        });
+
+        this.value = '';
+    };
+
+    output = document.querySelector('#output');
+
+    function appendTBox(data) {
+        var div = document.createElement('div');
+        div.innerHTML = '<section class="name">' + data.sender + '</section><section class="message">' + data.message + '</section>';
+        output.insertBefore(div, output.firstChild);
+
+        div.tabIndex = 0;
+        div.focus();
+
+        input.focus();
+    }
+</script>
+</html>

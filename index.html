@@ -1,0 +1,120 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title></title>
+<meta name="keywords" content="" />
+<meta name="description" content="" />
+<link href="http://fonts.googleapis.com/css?family=Source+Sans+Pro:200,300,400,600,700,900" rel="stylesheet" />
+<link href="default.css" rel="stylesheet" type="text/css" media="all" />
+<link href="fonts.css" rel="stylesheet" type="text/css" media="all" />
+
+<!--[if IE 6]><link href="default_ie6.css" rel="stylesheet" type="text/css" /><![endif]-->
+
+<script type="text/javascript" src="js/jquery.min.js"></script>
+<script type="text/javascript">
+$(document).ready(function() {
+	$('a.login-window').click(function() {
+		
+		// Getting the variable's value from a link 
+		var loginBox = $(this).attr('href');
+
+		//Fade in the Popup and add close button
+		$(loginBox).fadeIn(300);
+		
+		//Set the center alignment padding + border
+		var popMargTop = ($(loginBox).height() + 24) / 2; 
+		var popMargLeft = ($(loginBox).width() + 24) / 2; 
+		
+		$(loginBox).css({ 
+			'margin-top' : -popMargTop,
+			'margin-left' : -popMargLeft
+		});
+		
+		// Add the mask to body
+		$('body').append('<div id="mask"></div>');
+		$('#mask').fadeIn(300);
+		
+		return false;
+	});
+	
+	// When clicking on the button close or the mask layer the popup closed
+	$('a.close, #mask').live('click', function() { 
+	  $('#mask , .login-popup').fadeOut(300 , function() {
+		$('#mask').remove();  
+	}); 
+	return false;
+	});
+});
+</script>
+
+<script>
+function validateLoginForm()
+{
+var username=document.forms["loginform"]["username"].value;
+if (username==null || username=="")
+  {
+  alert("Please fill in username");
+  return false;
+  }
+
+var password=document.forms["loginform"]["password"].value;
+if (password==null || password=="")
+  {
+  alert("Password must be filled out");
+  return false;
+  }
+}
+</script>
+
+</head>
+<body>
+<div id="header-wrapper">
+	<div id="header" class="container">
+		<div id="logo">
+			<span class="icon icon-fire"></span>
+			<h1><a href="#">UTM Voice</a></h1>
+			<span>A P2P Video Conferencing Tool</a></span> </div>
+		<div id="menu">
+			<ul>
+				<li class="current_page_item"><a href="#" title="UTM Voice">Homepage</a></li>
+				<li><a href="#login-box" class="login-window" title="Login">Login</a></li>
+			</ul>
+		</div>
+	</div>
+</div>
+
+<div id="login-box" class="login-popup">
+<a href="#" class="close"><img src="images/close_pop.png" class="btn_close" title="Close Window" alt="Close" /></a>
+  <form name="loginform" method="post" class="signin" action="login_verify.php" onSubmit="return validateLoginForm()">
+        <fieldset class="textbox">
+        <label class="username">
+        <span>Username or email</span>
+        <input id="username" name="username" value="" type="text" autocomplete="on" placeholder="Username">
+        </label>
+        <label class="password">
+        <span>Password</span>
+        <input id="password" name="password" value="" type="password" placeholder="Password">
+        </label>
+        <button class="submit button" type="submit">Sign in</button>
+        </fieldset>
+  </form>
+</div>
+<div id="wrapper4">
+	<div id="footer" class="container">
+		<div>
+			<header class="title">
+				<h2>Get in touch with Designer</h2>
+				<span class="byline">If you wish to know more about me, you can contact me through following method</span> </header>
+			<ul class="contact">
+				<li><a target="_blank" href="http://twitter.com/teklooncheah" class="icon icon-twitter"><span>Twitter</span></a></li>
+				<li><a target="_blank" href="http://facebook.com/teklooncheah" class="icon icon-facebook"><span></span></a></li>
+			</ul>
+		</div>
+	</div>
+</div>
+<div id="copyright">
+	<p>Copyright (c) 2015 WWW.UTM.MY All rights reserved. | Design by Tek Loon.</p>
+</div>
+</body>
+</html>
